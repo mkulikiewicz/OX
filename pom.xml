@@ -6,7 +6,7 @@
 
     <groupId>com.mkul.game.ox</groupId>
     <artifactId>OX</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <url>mkul.pl</url>
 
     <properties>
@@ -14,8 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <version.plugin.maven.surefire>3.0.0-M4</version.plugin.maven.surefire>
         <project.java.version>11</project.java.version>
-        <maven.compiler.source>${project.java.version}</maven.compiler.source>
-        <maven.compiler.target>${project.java.version}</maven.compiler.target>
+        <maven.compiler.release>${project.java.version}</maven.compiler.release>
         <maven.compiler.encoding>${project.build.sourceEncoding}</maven.compiler.encoding>
         <maven.resources.encoding>${project.build.sourceEncoding}</maven.resources.encoding>
         <version.plugin.maven.enforcer>3.0.0-M2</version.plugin.maven.enforcer>
@@ -24,25 +23,30 @@
         <version.plugin.maven.compiler>3.8.0</version.plugin.maven.compiler>
         <version.plugin.maven.resources>3.1.0</version.plugin.maven.resources>
         <version.plugin.maven.jacoco>0.8.5</version.plugin.maven.jacoco>
+        <version.testng>7.0.0</version.testng>
+        <version.assertj.core>3.11.1</version.assertj.core>
+        <version.mockito.core>2.10.0</version.mockito.core>
+        <version.maven.site.plugin>3.7.1</version.maven.site.plugin>
+        <version.maven.project.info.reports.plugin>3.0.0</version.maven.project.info.reports.plugin>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.0.0</version>
+            <version>${version.testng}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.11.1</version>
+            <version>${version.assertj.core}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>2.10.0</version>
+            <version>${version.mockito.core}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -130,12 +134,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
+                <version>${version.maven.site.plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>${version.maven.project.info.reports.plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -176,16 +180,8 @@
                                 <rule>
                                     <limits>
                                         <limit>
-                                            <counter>LINE</counter>
-                                            <minimum>70%</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                                <rule>
-                                    <limits>
-                                        <limit>
                                             <counter>BRANCH</counter>
-                                            <minimum>70%</minimum>
+                                            <minimum>60%</minimum>
                                         </limit>
                                     </limits>
                                 </rule>

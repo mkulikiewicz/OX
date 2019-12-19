@@ -7,7 +7,7 @@ public class OXApp {
         try {
             int size = Integer.parseInt(args[0]);
             new BoardDraw(size).show(new BoardScore());
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException |IncorrectBoardSizeException e) {
             System.out.println("Niepoprawne argumenty rysuję podstawową planszę");
             new BoardDraw(3).show(new BoardScore());
         }
