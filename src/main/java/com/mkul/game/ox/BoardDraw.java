@@ -11,22 +11,32 @@ class BoardDraw {
     }
 
     void show(BoardScore boardScore) {
-        System.out.printf("%-3s", " ");
-        for (int x = 0; x < boardSize; x++) {
-            System.out.printf("%-3s ", x);
-        }
-        System.out.print("\n");
-
+        System.out.println(drawColumnsIndex());
         for (int x = 0; x < boardSize; x++) {
             System.out.printf("%-2s ", x);
-            for (int y = 0; y < boardSize; y++) {
-                if (boardScore.isFieldExist(x, y)) {
-                    System.out.printf("%-4s", boardScore.getValue(x, y).toString());
-                } else {
-                    System.out.printf("%-4s", "_");
-                }
-            }
+            System.out.print(drawRawLineWithValue(boardScore, x));
             System.out.print("\n");
         }
+    }
+
+    private String drawRawLineWithValue(BoardScore boardScore, int x) {
+        StringBuilder allRawLine = new StringBuilder();
+        for (int y = 0; y < boardSize; y++) {
+            allRawLine.append(getFieldValueOrEmptyValue(boardScore, x, y));
+        }
+        return allRawLine.toString();
+    }
+
+    private String getFieldValueOrEmptyValue(BoardScore boardScore, int x, int y) {
+        return boardScore.isFieldExist(x, y) ? String.format("%-4s", boardScore.getValue(x, y).toString()) : String.format("%-4s", "_");
+    }
+
+    private String drawColumnsIndex() {
+        StringBuilder columnIndex = new StringBuilder();
+        columnIndex.append(String.format("%-3s", " "));
+        for (int x = 0; x < boardSize; x++) {
+            columnIndex.append(String.format("%-3s ", x));
+        }
+        return columnIndex.toString();
     }
 }
