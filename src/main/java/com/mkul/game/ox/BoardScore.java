@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Class represents board with score
+ * Represents board with score
  *
  * @author Maciej Kulikiewicz
  */
@@ -12,9 +12,9 @@ public class BoardScore {
     private TreeMap<Field, FieldValue> board = new TreeMap<>();
 
     /**
-     * Method used to add field to board score
+     * Used to add field to board score
      *
-     * @param field field to add
+     * @param field      field to add
      * @param fieldValue field value to add with field
      */
     public void addFieldToBoard(Field field, FieldValue fieldValue) {
@@ -30,7 +30,7 @@ public class BoardScore {
     }
 
     /**
-     * Method check that field is in board score
+     * Check that field is in board score
      *
      * @param field checked field
      * @return true if field exist in boards score
@@ -40,17 +40,17 @@ public class BoardScore {
     }
 
     /**
-     * Method return value from field
+     * Return value from board
      *
      * @param field single field in board
-     * @return value from field
+     * @return value from board
      */
     public FieldValue getValue(Field field) {
         return board.get(field);
     }
 
     /**
-     * Method return last added entry to board score
+     * Return last added entry to board score
      *
      * @return last added entry to board score
      */
@@ -59,7 +59,7 @@ public class BoardScore {
     }
 
     /**
-     * Method return size of board score
+     * Return size of board score
      *
      * @return size of board score
      */

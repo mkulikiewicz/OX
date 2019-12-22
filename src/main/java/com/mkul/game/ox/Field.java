@@ -3,7 +3,7 @@ package com.mkul.game.ox;
 import java.util.Objects;
 
 /**
- * Class represent single field in board
+ * Represent single field in board
  *
  * @author Maciej Kulikiewicz
  */

@@ -7,7 +7,7 @@ import com.mkul.game.ox.FieldValue;
 interface BoardCheck {
 
     /**
-     * The method checks if there is a win on the board
+     * Checks if there is a win on the board
      * @param boardScore board with score
      * @param winingSize size of win
      * @param fieldToCheck field with we want to check

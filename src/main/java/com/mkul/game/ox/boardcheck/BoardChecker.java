@@ -4,32 +4,31 @@ import com.mkul.game.ox.BoardScore;
 import com.mkul.game.ox.Field;
 import com.mkul.game.ox.FieldValue;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Class used to check if a win occurred
+ * Used to check if a win occurred
  *
  * @author Maciej Kulikiewicz
  */
 public class BoardChecker {
 
-    private final List<BoardCheck> borderCheckList = new ArrayList<>();
+    private final List<BoardCheck> boardCheckList;
     private final BoardScore boardScore;
     private final int winingSize;
 
     public BoardChecker(BoardScore boardScore, int winingSize) {
         this.boardScore = boardScore;
         this.winingSize = winingSize;
-        borderCheckList.add(new BoardCheckHorizontal());
-        borderCheckList.add(new BoardCheckVertical());
-        borderCheckList.add(new BoardCheckFirstDiagonal());
-        borderCheckList.add(new BoardCheckSecondDiagonal());
+        boardCheckList = List.of(new BoardCheckHorizontal(),
+                new BoardCheckVertical(),
+                new BoardCheckDiagonal(),
+                new BoardCheckAntidiagonal());
     }
 
     /**
-     * Method used to check if is wining
+     * Used to check if is wining
      *
      * @return true if is wining
      */
@@ -40,12 +39,12 @@ public class BoardChecker {
         FieldValue fieldValue = boardScore.getLastAddedField().getValue();
         if (Objects.isNull(field) || Objects.isNull(fieldValue))
             return false;
-        return borderCheckList.stream().anyMatch(e -> e.check(boardScore, winingSize, field, fieldValue));
+        return boardCheckList.stream().anyMatch(e -> e.check(boardScore, winingSize, field, fieldValue));
     }
 
 
     /**
-     * Method check if on board is a draw.
+     * Check if on board is a draw.
      *
      * @return true if on board is a draw.
      */

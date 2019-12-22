@@ -8,6 +8,10 @@ public class OXApp {
 
     // is only used to show demo
     public static void main(String[] args) {
+        run(args);
+    }
+
+    private static void run(String[] args) {
         BoardDraw boardDraw;
         try {
             int size = Integer.parseInt(args[0]);

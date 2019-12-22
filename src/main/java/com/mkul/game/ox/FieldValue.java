@@ -1,7 +1,7 @@
 package com.mkul.game.ox;
 
 /**
- * Class represent value of field in board
+ * Represent value of field in board
  */
 public enum FieldValue {
     X("X"),
