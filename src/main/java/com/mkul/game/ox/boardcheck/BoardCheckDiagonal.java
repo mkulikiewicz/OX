@@ -15,11 +15,13 @@ class BoardCheckDiagonal implements BoardCheck {
         int steps = 1;
         int score = 1;
         while (winingSize != steps) {
-            if (boardScore.isFieldExist(fieldToCheck.nextRight(steps).nextUp(steps)) && boardScore.getValue(fieldToCheck.nextRight(steps).nextUp(steps)) == fieldValue) {
+            if (boardScore.isFieldExist(fieldToCheck.nextRight(steps).nextUp(steps))
+                    && boardScore.getValue(fieldToCheck.nextRight(steps).nextUp(steps)) == fieldValue) {
                 score++;
             }
 
-            if (boardScore.isFieldExist(fieldToCheck.nextLeft(steps).nextDown(steps)) && boardScore.getValue(fieldToCheck.nextLeft(steps).nextDown(steps)) == fieldValue) {
+            if (boardScore.isFieldExist(fieldToCheck.nextLeft(steps).nextDown(steps))
+                    && boardScore.getValue(fieldToCheck.nextLeft(steps).nextDown(steps)) == fieldValue) {
                 score++;
             }
             steps++;

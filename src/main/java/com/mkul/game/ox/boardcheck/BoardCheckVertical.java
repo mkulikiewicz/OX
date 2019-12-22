@@ -15,11 +15,13 @@ class BoardCheckVertical implements BoardCheck {
         int steps = 1;
         int score = 1;
         while (winingSize != steps) {
-            if (boardScore.isFieldExist(fieldToCheck.nextUp(steps)) && boardScore.getValue(fieldToCheck.nextUp(steps)) == fieldValue) {
+            if (boardScore.isFieldExist(fieldToCheck.nextUp(steps))
+                    && boardScore.getValue(fieldToCheck.nextUp(steps)) == fieldValue) {
                 score++;
             }
 
-            if (boardScore.isFieldExist(fieldToCheck.nextDown(steps)) && boardScore.getValue(fieldToCheck.nextDown(steps)) == fieldValue) {
+            if (boardScore.isFieldExist(fieldToCheck.nextDown(steps))
+                    && boardScore.getValue(fieldToCheck.nextDown(steps)) == fieldValue) {
                 score++;
             }
             steps++;

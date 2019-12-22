@@ -15,11 +15,13 @@ class BoardCheckHorizontal implements BoardCheck {
         int steps = 1;
         int score = 1;
         while (winingSize != steps) {
-            if (boardScore.isFieldExist(fieldToCheck.nextRight(steps)) && boardScore.getValue(fieldToCheck.nextRight(steps)) == fieldValue) {
+            if (boardScore.isFieldExist(fieldToCheck.nextRight(steps))
+                    && boardScore.getValue(fieldToCheck.nextRight(steps)) == fieldValue) {
                 score++;
             }
 
-            if (boardScore.isFieldExist(fieldToCheck.nextLeft(steps)) && boardScore.getValue(fieldToCheck.nextLeft(steps)) == fieldValue) {
+            if (boardScore.isFieldExist(fieldToCheck.nextLeft(steps))
+                    && boardScore.getValue(fieldToCheck.nextLeft(steps)) == fieldValue) {
                 score++;
             }
             steps++;
