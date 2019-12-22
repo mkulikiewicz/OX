@@ -12,7 +12,7 @@ public class FieldTest {
         assertThat(first).isEqualTo(second);
     }
 
-    @Test(dataProvider = "getDifferentObject", dataProviderClass = FieldDP.class)
+    @Test(dataProvider = "getDifferentField", dataProviderClass = FieldDP.class)
     public void testEqualsDifferentObject(Field first, Field second) {
         //Then
         assertThat(first).isNotEqualTo(second);

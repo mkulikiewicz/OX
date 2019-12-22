@@ -21,7 +21,7 @@ public class FieldDP {
     }
 
     @DataProvider
-    public Object[][] getDifferentObject() {
+    public Object[][] getDifferentField() {
         return new Object[][]{
                 {new Field(10, 20), new Field(1, 2)},
                 {new Field(51, 7), new Field(5, 7)},

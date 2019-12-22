@@ -147,26 +147,9 @@
                 <version>${version.plugin.maven.jacoco}</version>
                 <executions>
                     <execution>
-                        <configuration>
-                            <destFile>${project.build.directory}/reports/jacoco/jacoco.exec</destFile>
-                        </configuration>
                         <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <configuration>
-                            <dataFile>
-                                ${project.build.directory}/reports/jacoco/jacoco.exec
-                            </dataFile>
-                            <outputDirectory>
-                                ${project.build.directory}/reports/jacoco/report/unit
-                            </outputDirectory>
-                        </configuration>
-                        <id>report</id>
-                        <goals>
-                            <goal>report</goal>
                         </goals>
                     </execution>
                     <execution>
@@ -175,7 +158,6 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
-                            <dataFile>${project.build.directory}/reports/jacoco/jacoco.exec</dataFile>
                             <rules>
                                 <rule>
                                     <limits>

@@ -4,8 +4,8 @@ import java.util.Objects;
 
 class Field implements Comparable<Field> {
 
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     Field(int x, int y) {
         this.x = x;
@@ -26,7 +26,6 @@ class Field implements Comparable<Field> {
     }
 
     @Override
-    public int compareTo(Field o) {
-        return x == o.x && y == o.y ? 0 : 1;
+    public int compareTo(Field o) { return x == o.x ? Integer.compare(y, o.y) : Integer.compare(x, o.x);
     }
 }
