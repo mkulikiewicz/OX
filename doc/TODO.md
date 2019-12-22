@@ -11,3 +11,6 @@ Ogólne tematy
 3. Użytkownicy posiadają imię
 4. Użytkownicy losują czy będą Xem czy O
 5. Gra składa się z 3 rozgrywek
+6. Optymalizacja algorytmu znajdowania wygranje(aktualnie nie przestaje sprawdzać)
+7. Dodanie wyjątków podczas wyjścia za planszę oraz powtórzenia ruchu
+8. Użytkownik możę skonfigurować ilość wygranych

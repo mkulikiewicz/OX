@@ -2,12 +2,12 @@ package com.mkul.game.ox;
 
 import java.util.Objects;
 
-class Field implements Comparable<Field> {
+public class Field implements Comparable<Field>, BoardNavigable {
 
     private final int x;
     private final int y;
 
-    Field(int x, int y) {
+    public Field(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -26,6 +26,27 @@ class Field implements Comparable<Field> {
     }
 
     @Override
-    public int compareTo(Field o) { return x == o.x ? Integer.compare(y, o.y) : Integer.compare(x, o.x);
+    public int compareTo(Field o) {
+        return x == o.x ? Integer.compare(y, o.y) : Integer.compare(x, o.x);
+    }
+
+    @Override
+    public Field nextLeft(int steps) {
+        return new Field(x, y - steps);
+    }
+
+    @Override
+    public Field nextRight(int steps) {
+        return new Field(x, y + steps);
+    }
+
+    @Override
+    public Field nextUp(int steps) {
+        return new Field(x - steps, y);
+    }
+
+    @Override
+    public Field nextDown(int steps) {
+        return new Field(x + steps, y);
     }
 }
