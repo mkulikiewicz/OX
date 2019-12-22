@@ -1,9 +1,11 @@
 package com.mkul.game.ox;
 
-enum FieldValue {
+/**
+ * Represent value of field in board
+ */
+public enum FieldValue {
     X("X"),
-    Y("Y"),
-    EMPTY("_");
+    O("O");
 
     private String field;
 
