@@ -4,10 +4,10 @@ import com.mkul.game.ox.BoardScore;
 import com.mkul.game.ox.Field;
 import com.mkul.game.ox.FieldValue;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 @Test
 public class BoardCheckerTest {
 
@@ -15,8 +15,7 @@ public class BoardCheckerTest {
     private static final int WINING_SIZE = 3;
 
     @BeforeMethod
-    public void initBoardScore()
-    {
+    public void initBoardScore() {
         boardScore = new BoardScore();
     }
 
@@ -49,7 +48,7 @@ public class BoardCheckerTest {
     }
 
     @Test(dataProvider = "getBoardScoreWithOneMoveToDraw", dataProviderClass = BoardCheckerDP.class)
-    public void testIsDrawReturnTrueOn3x3Board(BoardScore boardScore, Field field, FieldValue fieldValue){
+    public void testIsDrawReturnTrueOn3x3Board(BoardScore boardScore, Field field, FieldValue fieldValue) {
         //When
         boardScore.addFieldToBoard(field, fieldValue);
         boolean IsDraw = new BoardChecker(boardScore, WINING_SIZE).isDraw();
@@ -58,12 +57,12 @@ public class BoardCheckerTest {
     }
 
     @Test(dataProvider = "getSingleMoveWithOneFieldIn3x3Board", dataProviderClass = BoardCheckerDP.class)
-    public void testIsDrawReturnFalseOn3x3Board(Field field,Field singleMove, FieldValue fieldValue){
+    public void testIsDrawReturnFalseOn3x3Board(Field field, Field singleMove, FieldValue fieldValue) {
         //Given
         boardScore.addFieldToBoard(field, fieldValue);
 
         //When
-        boardScore.addFieldToBoard(singleMove,fieldValue);
+        boardScore.addFieldToBoard(singleMove, fieldValue);
         boolean IsDraw = new BoardChecker(boardScore, WINING_SIZE).isDraw();
         //Then
         assertThat(IsDraw).isFalse();

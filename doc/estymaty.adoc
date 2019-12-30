@@ -1,15 +1,24 @@
-== 18.12.2017
+== 18.12.2019
 - Optymistycznie: + Wyświetlenie planszy
 - Realistyczna:  + utworzenie struktur planszy
 - Pesymistycznie: Konfiguracja projektu, konceptualizacja
 
-== 19.12.2017
+== 19.12.2019
 
 
-== 20.12.2017
+== 20.12.2019
 
 
-== 21.12.2017
+== 21.12.2019
 
 
+== 23.12.2019
+- Optymistycznie: + Gra posiada 3 tury.
+- Realistyczna: + użytkownik uczestniczy w grze.
+- Pesymistycznie: + dodanie struktur użytkowników.
+
+== 30.12.2019
+- Optymistycznie: + Gracze mogą grać jeden po drugim
+- Realistyczna: + jest tylko 2dwóch graczy w grze
+- Pesymistycznie: gracze posiadają imiona
 

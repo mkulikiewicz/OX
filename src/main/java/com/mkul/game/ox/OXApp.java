@@ -8,10 +8,21 @@ public class OXApp {
 
     // is only used to show demo
     public static void main(String[] args) {
-        run(args);
+        try {
+            run(args);
+        } catch (NotEnoughPlayers | TooManyPlayers e) {
+            System.out.println("Nie wystarczająca ilość użytkowników");
+            e.printStackTrace();
+        }
     }
 
-    private static void run(String[] args) {
+    private static void run(String[] args) throws NotEnoughPlayers, TooManyPlayers {
+
+        Players players = new Players();
+        players.addPlayer("Maciek");
+        players.addPlayer("Michał");
+
+
         BoardDraw boardDraw;
         try {
             int size = Integer.parseInt(args[0]);
@@ -24,9 +35,9 @@ public class OXApp {
         }
 
         BoardScore boardScore = new BoardScore();
-        FieldValue fieldValue = FieldValue.X;
-        System.out.println("Ruch gracza X");
+
         while (true) {
+            System.out.println(String.format("Ruch gracza:%s", players.getCurrent()));
             Scanner scanner = new Scanner(System.in);
             int x;
             int y;
@@ -37,7 +48,7 @@ public class OXApp {
                 System.out.println("Nie poprawne dane wejście spróbuj ponownie");
                 continue;
             }
-            boardScore.addFieldToBoard(new Field(x, y), fieldValue);
+            boardScore.addFieldToBoard(new Field(x, y), players.getFieldValueForCurrentPlayer());
             boardDraw.show(boardScore);
             BoardChecker boardChecker = new BoardChecker(boardScore, 3);
             if (boardChecker.check()) {
@@ -47,13 +58,7 @@ public class OXApp {
                 System.out.println("Nie było zwycięzcy :(");
                 break;
             }
-            if (fieldValue == FieldValue.X) {
-                System.out.println("Ruch gracza 0");
-                fieldValue = FieldValue.O;
-            } else {
-                System.out.println("Ruch gracza X");
-                fieldValue = FieldValue.X;
-            }
+            players.getNext();
         }
     }
 }
