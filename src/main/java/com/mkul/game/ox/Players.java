@@ -1,73 +1,45 @@
 package com.mkul.game.ox;
 
-import java.util.LinkedList;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Players {
-    private LinkedList<Player> playerList = new LinkedList<>();
-    private Player currentPlayer;
+    final Player player1;
+    final Player player2;
+    final Queue<Player> players;
 
-    public void addPlayer(String name) throws TooManyPlayers {
-        new CreatePlayer().withName(name).withRandomFieldValue().addToList();
+    private Players(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+        players = new LinkedList<>(List.of(player1, player2));
     }
 
-    Player getCurrent() throws NotEnoughPlayers {
-        if (playerList.size() < 1)
-            throw new NotEnoughPlayers();
-        if (Objects.isNull(currentPlayer))
-            setRandomCurrentPlayer();
-        return currentPlayer;
+    Player getCurrent() {
+       return players.peek();
     }
 
-    private void setRandomCurrentPlayer() {
-        if (playerList.size() > 1) {
-            currentPlayer = playerList.get(ThreadLocalRandom.current().nextInt(0, 2));
-        } else {
-            currentPlayer = playerList.peekFirst();
-        }
+    Player getNext() {
+        Player player = players.poll();
+        players.add(player);
+        return player;
     }
 
-    public FieldValue getFieldValueForCurrentPlayer() throws NotEnoughPlayers {
-        final Player currentPlayer = getCurrent();
-        return currentPlayer.getFieldValue();
-    }
+    static final class Builder {
+        Player player1;
+        Player player2;
 
-    public Player getNext() throws NotEnoughPlayers {
-        final Player currentPlayer = getCurrent();
-        Optional<Player> expectedNextPlayer = playerList.stream().filter(player -> player.getFieldValue() != currentPlayer.getFieldValue()).findFirst();
-        if (expectedNextPlayer.isPresent()) {
-            this.currentPlayer = expectedNextPlayer.get();
-            return this.currentPlayer;
-        }
-        throw new NotEnoughPlayers();
-    }
-
-    private class CreatePlayer {
-        private String name;
-        private FieldValue fieldValue;
-
-        CreatePlayer withName(String name) {
-            this.name = name;
+        Builder player1(String name){
+            this.player1 = new Player(name, FieldValue.O);
             return this;
         }
 
-        CreatePlayer withRandomFieldValue() {
-            if (playerList.size() < 1) {
-                fieldValue = ThreadLocalRandom.current().nextInt(0, 2) == 1 ? FieldValue.X : FieldValue.O;
-            } else {
-                fieldValue = playerList.peekLast().getFieldValue() == FieldValue.X ? FieldValue.O : FieldValue.X;
-            }
+        Builder player2(String name){
+            this.player2 = new Player(name, FieldValue.X);
             return this;
         }
 
-        Player addToList() throws TooManyPlayers {
-            if (playerList.size() > 1) {
-                throw new TooManyPlayers();
-            }
-            playerList.add(new Player(name, fieldValue));
-            return playerList.peekLast();
+        Players build(){
+            return new Players(player1, player2);
         }
     }
 }
