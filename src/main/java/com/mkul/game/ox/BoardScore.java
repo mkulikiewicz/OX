@@ -9,16 +9,16 @@ import java.util.TreeMap;
  * @author Maciej Kulikiewicz
  */
 public class BoardScore {
-  private TreeMap<Field, FieldValue> board = new TreeMap<>();
+  private TreeMap<Field, Sign> board = new TreeMap<>();
 
   /**
    * Used to add field to board score.
    *
-   * @param field      field to add
-   * @param fieldValue field value to add with field
+   * @param field field to add
+   * @param sign  sign to add with field
    */
-  public void addFieldToBoard(Field field, FieldValue fieldValue) {
-    board.put(field, fieldValue);
+  public void addFieldToBoard(Field field, Sign sign) {
+    board.put(field, sign);
   }
 
   boolean isFieldExist(int x, int y) {
@@ -35,7 +35,7 @@ public class BoardScore {
     return board.containsKey(field);
   }
 
-  FieldValue getValue(int x, int y) {
+  Sign getValue(int x, int y) {
     return board.get(new Field(x, y));
   }
 
@@ -45,7 +45,7 @@ public class BoardScore {
    * @param field single field in board
    * @return value from board
    */
-  public FieldValue getValue(Field field) {
+  public Sign getValue(Field field) {
     return board.get(field);
   }
 
@@ -54,7 +54,7 @@ public class BoardScore {
    *
    * @return last added entry to board score
    */
-  public Map.Entry<Field, FieldValue> getLastAddedField() {
+  public Map.Entry<Field, Sign> getLastAddedField() {
     return board.lastEntry();
   }
 

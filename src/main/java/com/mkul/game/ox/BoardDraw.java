@@ -32,12 +32,12 @@ class BoardDraw {
   private String drawRawLineWithValue(BoardScore boardScore, int x) {
     StringBuilder allRawLine = new StringBuilder();
     for (int y = 0; y < boardSize; y++) {
-      allRawLine.append(getFieldValueOrEmptyValue(boardScore, x, y));
+      allRawLine.append(getSignIfExist(boardScore, x, y));
     }
     return allRawLine.toString();
   }
 
-  private String getFieldValueOrEmptyValue(BoardScore boardScore, int x, int y) {
+  private String getSignIfExist(BoardScore boardScore, int x, int y) {
     return boardScore.isFieldExist(x, y)
         ? String.format("%-4s", boardScore.getValue(x, y).toString()) : String.format("%-4s", "_");
   }

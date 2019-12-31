@@ -3,18 +3,18 @@ package com.mkul.game.ox;
 /**
  * Represent value of field in board.
  */
-public enum FieldValue {
+public enum Sign {
   X("X"),
   O("O");
 
-  private String field;
+  private String sign;
 
-  FieldValue(String field) {
-    this.field = field;
+  Sign(String sign) {
+    this.sign = sign;
   }
 
   @Override
   public String toString() {
-    return field;
+    return sign;
   }
 }

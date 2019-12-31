@@ -2,7 +2,7 @@ package com.mkul.game.ox.boardcheck;
 
 import com.mkul.game.ox.BoardScore;
 import com.mkul.game.ox.Field;
-import com.mkul.game.ox.FieldValue;
+import com.mkul.game.ox.Sign;
 
 import java.util.List;
 import java.util.Objects;
@@ -43,12 +43,12 @@ public class BoardChecker {
       return false;
     }
     Field field = boardScore.getLastAddedField().getKey();
-    FieldValue fieldValue = boardScore.getLastAddedField().getValue();
-    if (Objects.isNull(field) || Objects.isNull(fieldValue)) {
+    Sign sign = boardScore.getLastAddedField().getValue();
+    if (Objects.isNull(field) || Objects.isNull(sign)) {
       return false;
     }
     return boardCheckList.stream()
-        .anyMatch(e -> e.check(boardScore, winingSize, field, fieldValue));
+        .anyMatch(e -> e.check(boardScore, winingSize, field, sign));
   }
 
 
@@ -57,6 +57,7 @@ public class BoardChecker {
    *
    * @return true if on board is a draw.
    */
+  //TODO: this is a bug when board size is greater then winingSize^2
   public boolean isDraw() {
     return boardScore.getBoardScoreSize() >= Math.pow(winingSize, 2);
   }

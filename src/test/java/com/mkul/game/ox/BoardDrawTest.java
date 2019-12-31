@@ -11,7 +11,7 @@ public class BoardDrawTest extends OutputBaseTest {
         //Given
         BoardDraw boardDraw = new BoardDraw(boardSize);
         BoardScore boardScore = new BoardScore();
-        boardScore.addFieldToBoard(new Field(boardSize - 1, boardSize - 1), FieldValue.X);
+        boardScore.addFieldToBoard(new Field(boardSize - 1, boardSize - 1), Sign.X);
 
         //When
         boardDraw.show(boardScore);

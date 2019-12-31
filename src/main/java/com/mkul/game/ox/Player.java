@@ -2,20 +2,20 @@ package com.mkul.game.ox;
 
 class Player {
 
-  private String name;
-  private FieldValue fieldValue;
+  private final String name;
+  private final Sign sign;
 
-  Player(String name, FieldValue fieldValue) {
+  Player(String name, Sign sign) {
     this.name = name;
-    this.fieldValue = fieldValue;
+    this.sign = sign;
   }
 
-  FieldValue getFieldValue() {
-    return fieldValue;
+  Sign getSign() {
+    return sign;
   }
 
   @Override
   public String toString() {
-    return String.format("%s posiada znak %s", name, fieldValue.toString());
+    return String.format("%s posiada znak %s", name, sign.toString());
   }
 }

@@ -2,7 +2,7 @@ package com.mkul.game.ox.boardcheck;
 
 import com.mkul.game.ox.BoardScore;
 import com.mkul.game.ox.Field;
-import com.mkul.game.ox.FieldValue;
+import com.mkul.game.ox.Sign;
 
 interface BoardCheck {
 
@@ -15,6 +15,6 @@ interface BoardCheck {
    * @param fieldValue   value for checked field
    * @return true if this move was winning move
    */
-  boolean check(BoardScore boardScore, int winingSize, Field fieldToCheck, FieldValue fieldValue);
+  boolean check(BoardScore boardScore, int winingSize, Field fieldToCheck, Sign fieldValue);
 
 }
