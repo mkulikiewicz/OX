@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BoardCheckerTest {
 
     private static BoardScore boardScore;
-    private static final int WINING_SIZE = 3;
+    private static final int WINNING_SIZE = 3;
 
     @BeforeMethod
     public void initBoardScore() {
@@ -27,7 +27,7 @@ public class BoardCheckerTest {
 
         //When
         boardScore.addFieldToBoard(winingMove, winningValue);
-        boolean check = new BoardChecker(boardScore, WINING_SIZE).check();
+        boolean check = new BoardChecker(boardScore, WINNING_SIZE).check();
 
         //Then
         assertThat(check).isTrue();
@@ -42,7 +42,7 @@ public class BoardCheckerTest {
 
         //When
         boardScore.addFieldToBoard(winingMove, winningValue);
-        boolean check = new BoardChecker(boardScore, WINING_SIZE).check();
+        boolean check = new BoardChecker(boardScore, WINNING_SIZE).check();
         //Then
         assertThat(check).isFalse();
     }
@@ -51,7 +51,7 @@ public class BoardCheckerTest {
     public void testIsDrawReturnTrueOn3x3Board(BoardScore boardScore, Field field, Sign fieldValue) {
         //When
         boardScore.addFieldToBoard(field, fieldValue);
-        boolean IsDraw = new BoardChecker(boardScore, WINING_SIZE).isDraw();
+        boolean IsDraw = new BoardChecker(boardScore, WINNING_SIZE).isDraw();
         //Then
         assertThat(IsDraw).isTrue();
     }
@@ -63,7 +63,7 @@ public class BoardCheckerTest {
 
         //When
         boardScore.addFieldToBoard(singleMove, fieldValue);
-        boolean IsDraw = new BoardChecker(boardScore, WINING_SIZE).isDraw();
+        boolean IsDraw = new BoardChecker(boardScore, WINNING_SIZE).isDraw();
         //Then
         assertThat(IsDraw).isFalse();
     }

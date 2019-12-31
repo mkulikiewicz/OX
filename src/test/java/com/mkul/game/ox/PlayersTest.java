@@ -18,21 +18,19 @@ public class PlayersTest {
   }
 
   @Test
-  public void testGetCurrentPlayerReturnRandomPlayer() {
-    //Given
+  public void testGetCurrentPlayerReturnDefaultPlayerX() {
+    //Given exist in beforeMethod
 
     //When
-    players.getCurrent();
+    Player currentPlayer = players.getCurrent();
     //Then
-    assertThat(players.getCurrent().toString()).contains(" posiada znak ");
-    assertThat(players.getCurrent().toString())
-        .withFailMessage("Brak informacji o znaku przypisanym do gracza")
-        .containsPattern("[XO]");
+    assertThat(currentPlayer.getSign()).isEqualTo(Sign.X);
+    assertThat(currentPlayer.toString()).isEqualTo("Konrad posiada znak X");
   }
 
   @Test
   public void testGetNextPlayerReturnOtherPlayers() {
-    //Given
+    //Given exist in beforeMethod
     Player firstPlayer = players.getCurrent();
 
     //When
@@ -44,7 +42,7 @@ public class PlayersTest {
 
   @Test
   public void testGetNextPlayerChangeCurrentPlayer() {
-    //Given
+    //Given exist in beforeMethod
 
     //When
     Player secondPlayer = players.getNext();
@@ -73,8 +71,10 @@ public class PlayersTest {
         .playerWithSignX("Konrad")
         .setBeginSignO(true)
         .build();
+
     //When
     Sign playerSign = players.getPlayerSign();
+
     //Then
     assertThat(playerSign).isEqualTo(Sign.O);
   }
@@ -87,8 +87,10 @@ public class PlayersTest {
         .playerWithSignX("Konrad")
         .setBeginSignO(false)
         .build();
+
     //When
     Sign playerSign = players.getPlayerSign();
+
     //Then
     assertThat(playerSign).isEqualTo(Sign.X);
   }
