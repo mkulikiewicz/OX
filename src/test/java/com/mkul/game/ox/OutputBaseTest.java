@@ -9,11 +9,11 @@ import java.io.PrintStream;
 @Test
 public class OutputBaseTest {
 
-    ByteArrayOutputStream outputStream;
+  ByteArrayOutputStream outputStream;
 
-    @BeforeMethod
-    public void initOutput() {
-        outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-    }
+  @BeforeMethod
+  public void initOutput() {
+    outputStream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outputStream));
+  }
 }

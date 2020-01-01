@@ -2,7 +2,7 @@ package com.mkul.game.ox.boardcheck;
 
 import com.mkul.game.ox.BoardScore;
 import com.mkul.game.ox.Field;
-import com.mkul.game.ox.FieldValue;
+import com.mkul.game.ox.Sign;
 import org.testng.annotations.DataProvider;
 
 public class BoardCheckerDP {
@@ -11,64 +11,64 @@ public class BoardCheckerDP {
         return new Object[][]
                 {
                         //Horizontal
-                        {new Field(0, 0), new Field(0, 1), new Field(0, 2), FieldValue.X},
-                        {new Field(0, 0), new Field(0, 1), new Field(0, 2), FieldValue.O},
-                        {new Field(0, 2), new Field(0, 1), new Field(0, 0), FieldValue.X},
-                        {new Field(0, 2), new Field(0, 1), new Field(0, 0), FieldValue.O},
-                        {new Field(0, 0), new Field(0, 2), new Field(0, 1), FieldValue.X},
-                        {new Field(0, 0), new Field(0, 2), new Field(0, 1), FieldValue.O},
+                        {new Field(0, 0), new Field(0, 1), new Field(0, 2), Sign.X},
+                        {new Field(0, 0), new Field(0, 1), new Field(0, 2), Sign.O},
+                        {new Field(0, 2), new Field(0, 1), new Field(0, 0), Sign.X},
+                        {new Field(0, 2), new Field(0, 1), new Field(0, 0), Sign.O},
+                        {new Field(0, 0), new Field(0, 2), new Field(0, 1), Sign.X},
+                        {new Field(0, 0), new Field(0, 2), new Field(0, 1), Sign.O},
 
-                        {new Field(1, 0), new Field(1, 1), new Field(1, 2), FieldValue.X},
-                        {new Field(1, 0), new Field(1, 1), new Field(1, 2), FieldValue.O},
-                        {new Field(1, 2), new Field(1, 1), new Field(1, 0), FieldValue.X},
-                        {new Field(1, 2), new Field(1, 1), new Field(1, 0), FieldValue.O},
-                        {new Field(1, 0), new Field(1, 2), new Field(1, 1), FieldValue.X},
-                        {new Field(1, 0), new Field(1, 2), new Field(1, 1), FieldValue.O},
+                        {new Field(1, 0), new Field(1, 1), new Field(1, 2), Sign.X},
+                        {new Field(1, 0), new Field(1, 1), new Field(1, 2), Sign.O},
+                        {new Field(1, 2), new Field(1, 1), new Field(1, 0), Sign.X},
+                        {new Field(1, 2), new Field(1, 1), new Field(1, 0), Sign.O},
+                        {new Field(1, 0), new Field(1, 2), new Field(1, 1), Sign.X},
+                        {new Field(1, 0), new Field(1, 2), new Field(1, 1), Sign.O},
 
-                        {new Field(2, 0), new Field(2, 1), new Field(2, 2), FieldValue.X},
-                        {new Field(2, 0), new Field(2, 1), new Field(2, 2), FieldValue.O},
-                        {new Field(2, 2), new Field(2, 1), new Field(2, 0), FieldValue.X},
-                        {new Field(2, 2), new Field(2, 1), new Field(2, 0), FieldValue.O},
-                        {new Field(2, 0), new Field(2, 2), new Field(2, 1), FieldValue.X},
-                        {new Field(2, 0), new Field(2, 2), new Field(2, 1), FieldValue.O},
+                        {new Field(2, 0), new Field(2, 1), new Field(2, 2), Sign.X},
+                        {new Field(2, 0), new Field(2, 1), new Field(2, 2), Sign.O},
+                        {new Field(2, 2), new Field(2, 1), new Field(2, 0), Sign.X},
+                        {new Field(2, 2), new Field(2, 1), new Field(2, 0), Sign.O},
+                        {new Field(2, 0), new Field(2, 2), new Field(2, 1), Sign.X},
+                        {new Field(2, 0), new Field(2, 2), new Field(2, 1), Sign.O},
 
                         //Vertical
-                        {new Field(0, 0), new Field(1, 0), new Field(2, 0), FieldValue.X},
-                        {new Field(0, 0), new Field(1, 0), new Field(2, 0), FieldValue.O},
-                        {new Field(2, 0), new Field(1, 0), new Field(0, 0), FieldValue.X},
-                        {new Field(2, 0), new Field(1, 0), new Field(0, 0), FieldValue.O},
-                        {new Field(0, 0), new Field(2, 0), new Field(1, 0), FieldValue.X},
-                        {new Field(0, 0), new Field(2, 0), new Field(1, 0), FieldValue.O},
+                        {new Field(0, 0), new Field(1, 0), new Field(2, 0), Sign.X},
+                        {new Field(0, 0), new Field(1, 0), new Field(2, 0), Sign.O},
+                        {new Field(2, 0), new Field(1, 0), new Field(0, 0), Sign.X},
+                        {new Field(2, 0), new Field(1, 0), new Field(0, 0), Sign.O},
+                        {new Field(0, 0), new Field(2, 0), new Field(1, 0), Sign.X},
+                        {new Field(0, 0), new Field(2, 0), new Field(1, 0), Sign.O},
 
-                        {new Field(0, 1), new Field(1, 1), new Field(2, 1), FieldValue.X},
-                        {new Field(0, 1), new Field(1, 1), new Field(2, 1), FieldValue.O},
-                        {new Field(2, 1), new Field(1, 1), new Field(0, 1), FieldValue.X},
-                        {new Field(2, 1), new Field(1, 1), new Field(0, 1), FieldValue.O},
-                        {new Field(0, 1), new Field(2, 1), new Field(1, 1), FieldValue.X},
-                        {new Field(0, 1), new Field(2, 1), new Field(1, 1), FieldValue.O},
+                        {new Field(0, 1), new Field(1, 1), new Field(2, 1), Sign.X},
+                        {new Field(0, 1), new Field(1, 1), new Field(2, 1), Sign.O},
+                        {new Field(2, 1), new Field(1, 1), new Field(0, 1), Sign.X},
+                        {new Field(2, 1), new Field(1, 1), new Field(0, 1), Sign.O},
+                        {new Field(0, 1), new Field(2, 1), new Field(1, 1), Sign.X},
+                        {new Field(0, 1), new Field(2, 1), new Field(1, 1), Sign.O},
 
-                        {new Field(0, 2), new Field(1, 2), new Field(2, 2), FieldValue.X},
-                        {new Field(0, 2), new Field(1, 2), new Field(2, 2), FieldValue.O},
-                        {new Field(2, 2), new Field(1, 2), new Field(0, 2), FieldValue.X},
-                        {new Field(2, 2), new Field(1, 2), new Field(0, 2), FieldValue.O},
-                        {new Field(0, 2), new Field(2, 2), new Field(1, 2), FieldValue.X},
-                        {new Field(0, 2), new Field(2, 2), new Field(1, 2), FieldValue.O},
+                        {new Field(0, 2), new Field(1, 2), new Field(2, 2), Sign.X},
+                        {new Field(0, 2), new Field(1, 2), new Field(2, 2), Sign.O},
+                        {new Field(2, 2), new Field(1, 2), new Field(0, 2), Sign.X},
+                        {new Field(2, 2), new Field(1, 2), new Field(0, 2), Sign.O},
+                        {new Field(0, 2), new Field(2, 2), new Field(1, 2), Sign.X},
+                        {new Field(0, 2), new Field(2, 2), new Field(1, 2), Sign.O},
 
                         //Diagonal
-                        {new Field(0, 2), new Field(1, 1), new Field(2, 0), FieldValue.X},
-                        {new Field(0, 2), new Field(1, 1), new Field(2, 0), FieldValue.O},
-                        {new Field(2, 0), new Field(0, 2), new Field(1, 1), FieldValue.X},
-                        {new Field(2, 0), new Field(0, 2), new Field(1, 1), FieldValue.O},
-                        {new Field(1, 1), new Field(2, 0), new Field(0, 2), FieldValue.X},
-                        {new Field(1, 1), new Field(2, 0), new Field(0, 2), FieldValue.O},
+                        {new Field(0, 2), new Field(1, 1), new Field(2, 0), Sign.X},
+                        {new Field(0, 2), new Field(1, 1), new Field(2, 0), Sign.O},
+                        {new Field(2, 0), new Field(0, 2), new Field(1, 1), Sign.X},
+                        {new Field(2, 0), new Field(0, 2), new Field(1, 1), Sign.O},
+                        {new Field(1, 1), new Field(2, 0), new Field(0, 2), Sign.X},
+                        {new Field(1, 1), new Field(2, 0), new Field(0, 2), Sign.O},
 
                         //AntiDiagonal
-                        {new Field(0, 0), new Field(1, 1), new Field(2, 2), FieldValue.X},
-                        {new Field(0, 0), new Field(1, 1), new Field(2, 2), FieldValue.O},
-                        {new Field(2, 2), new Field(0, 0), new Field(1, 1), FieldValue.X},
-                        {new Field(2, 2), new Field(0, 0), new Field(1, 1), FieldValue.O},
-                        {new Field(1, 1), new Field(2, 2), new Field(0, 0), FieldValue.X},
-                        {new Field(1, 1), new Field(2, 2), new Field(0, 0), FieldValue.O},
+                        {new Field(0, 0), new Field(1, 1), new Field(2, 2), Sign.X},
+                        {new Field(0, 0), new Field(1, 1), new Field(2, 2), Sign.O},
+                        {new Field(2, 2), new Field(0, 0), new Field(1, 1), Sign.X},
+                        {new Field(2, 2), new Field(0, 0), new Field(1, 1), Sign.O},
+                        {new Field(1, 1), new Field(2, 2), new Field(0, 0), Sign.X},
+                        {new Field(1, 1), new Field(2, 2), new Field(0, 0), Sign.O},
                 };
     }
 
@@ -77,84 +77,84 @@ public class BoardCheckerDP {
         return new Object[][]
                 {
                         //Horizontal
-                        {new Field(0, 0), new Field(0, 1), new Field(1, 2), FieldValue.X},
-                        {new Field(0, 0), new Field(0, 1), new Field(1, 2), FieldValue.O},
-                        {new Field(0, 2), new Field(0, 1), new Field(1, 0), FieldValue.X},
-                        {new Field(0, 2), new Field(0, 1), new Field(1, 0), FieldValue.O},
-                        {new Field(0, 0), new Field(0, 2), new Field(1, 1), FieldValue.X},
-                        {new Field(0, 0), new Field(0, 2), new Field(1, 1), FieldValue.O},
+                        {new Field(0, 0), new Field(0, 1), new Field(1, 2), Sign.X},
+                        {new Field(0, 0), new Field(0, 1), new Field(1, 2), Sign.O},
+                        {new Field(0, 2), new Field(0, 1), new Field(1, 0), Sign.X},
+                        {new Field(0, 2), new Field(0, 1), new Field(1, 0), Sign.O},
+                        {new Field(0, 0), new Field(0, 2), new Field(1, 1), Sign.X},
+                        {new Field(0, 0), new Field(0, 2), new Field(1, 1), Sign.O},
 
-                        {new Field(1, 0), new Field(1, 1), new Field(0, 2), FieldValue.X},
-                        {new Field(1, 0), new Field(1, 1), new Field(0, 2), FieldValue.O},
-                        {new Field(1, 2), new Field(1, 1), new Field(0, 0), FieldValue.X},
-                        {new Field(1, 2), new Field(1, 1), new Field(0, 0), FieldValue.O},
-                        {new Field(1, 0), new Field(1, 2), new Field(0, 1), FieldValue.X},
-                        {new Field(1, 0), new Field(1, 2), new Field(0, 1), FieldValue.O},
+                        {new Field(1, 0), new Field(1, 1), new Field(0, 2), Sign.X},
+                        {new Field(1, 0), new Field(1, 1), new Field(0, 2), Sign.O},
+                        {new Field(1, 2), new Field(1, 1), new Field(0, 0), Sign.X},
+                        {new Field(1, 2), new Field(1, 1), new Field(0, 0), Sign.O},
+                        {new Field(1, 0), new Field(1, 2), new Field(0, 1), Sign.X},
+                        {new Field(1, 0), new Field(1, 2), new Field(0, 1), Sign.O},
 
-                        {new Field(2, 0), new Field(2, 1), new Field(1, 2), FieldValue.X},
-                        {new Field(2, 0), new Field(2, 1), new Field(1, 2), FieldValue.O},
-                        {new Field(2, 2), new Field(2, 1), new Field(1, 0), FieldValue.X},
-                        {new Field(2, 2), new Field(2, 1), new Field(1, 0), FieldValue.O},
-                        {new Field(2, 0), new Field(2, 2), new Field(1, 1), FieldValue.X},
-                        {new Field(2, 0), new Field(2, 2), new Field(1, 1), FieldValue.O},
+                        {new Field(2, 0), new Field(2, 1), new Field(1, 2), Sign.X},
+                        {new Field(2, 0), new Field(2, 1), new Field(1, 2), Sign.O},
+                        {new Field(2, 2), new Field(2, 1), new Field(1, 0), Sign.X},
+                        {new Field(2, 2), new Field(2, 1), new Field(1, 0), Sign.O},
+                        {new Field(2, 0), new Field(2, 2), new Field(1, 1), Sign.X},
+                        {new Field(2, 0), new Field(2, 2), new Field(1, 1), Sign.O},
 
                         //Vertical
-                        {new Field(0, 0), new Field(1, 0), new Field(2, 1), FieldValue.X},
-                        {new Field(0, 0), new Field(1, 0), new Field(2, 1), FieldValue.O},
-                        {new Field(2, 0), new Field(1, 0), new Field(0, 1), FieldValue.X},
-                        {new Field(2, 0), new Field(1, 0), new Field(0, 1), FieldValue.O},
-                        {new Field(0, 0), new Field(2, 0), new Field(1, 1), FieldValue.X},
-                        {new Field(0, 0), new Field(2, 0), new Field(1, 1), FieldValue.O},
+                        {new Field(0, 0), new Field(1, 0), new Field(2, 1), Sign.X},
+                        {new Field(0, 0), new Field(1, 0), new Field(2, 1), Sign.O},
+                        {new Field(2, 0), new Field(1, 0), new Field(0, 1), Sign.X},
+                        {new Field(2, 0), new Field(1, 0), new Field(0, 1), Sign.O},
+                        {new Field(0, 0), new Field(2, 0), new Field(1, 1), Sign.X},
+                        {new Field(0, 0), new Field(2, 0), new Field(1, 1), Sign.O},
 
-                        {new Field(0, 1), new Field(1, 1), new Field(2, 2), FieldValue.X},
-                        {new Field(0, 1), new Field(1, 1), new Field(2, 2), FieldValue.O},
-                        {new Field(2, 1), new Field(1, 1), new Field(0, 2), FieldValue.X},
-                        {new Field(2, 1), new Field(1, 1), new Field(0, 2), FieldValue.O},
-                        {new Field(0, 1), new Field(2, 1), new Field(1, 2), FieldValue.X},
-                        {new Field(0, 1), new Field(2, 1), new Field(1, 2), FieldValue.O},
+                        {new Field(0, 1), new Field(1, 1), new Field(2, 2), Sign.X},
+                        {new Field(0, 1), new Field(1, 1), new Field(2, 2), Sign.O},
+                        {new Field(2, 1), new Field(1, 1), new Field(0, 2), Sign.X},
+                        {new Field(2, 1), new Field(1, 1), new Field(0, 2), Sign.O},
+                        {new Field(0, 1), new Field(2, 1), new Field(1, 2), Sign.X},
+                        {new Field(0, 1), new Field(2, 1), new Field(1, 2), Sign.O},
 
-                        {new Field(0, 2), new Field(1, 2), new Field(2, 0), FieldValue.X},
-                        {new Field(0, 2), new Field(1, 2), new Field(2, 0), FieldValue.O},
-                        {new Field(2, 2), new Field(1, 2), new Field(0, 0), FieldValue.X},
-                        {new Field(2, 2), new Field(1, 2), new Field(0, 0), FieldValue.O},
-                        {new Field(0, 2), new Field(2, 2), new Field(1, 0), FieldValue.X},
-                        {new Field(0, 2), new Field(2, 2), new Field(1, 0), FieldValue.O},
+                        {new Field(0, 2), new Field(1, 2), new Field(2, 0), Sign.X},
+                        {new Field(0, 2), new Field(1, 2), new Field(2, 0), Sign.O},
+                        {new Field(2, 2), new Field(1, 2), new Field(0, 0), Sign.X},
+                        {new Field(2, 2), new Field(1, 2), new Field(0, 0), Sign.O},
+                        {new Field(0, 2), new Field(2, 2), new Field(1, 0), Sign.X},
+                        {new Field(0, 2), new Field(2, 2), new Field(1, 0), Sign.O},
 
                         //FirstDiagonal
-                        {new Field(0, 2), new Field(1, 1), new Field(2, 2), FieldValue.X},
-                        {new Field(0, 2), new Field(1, 1), new Field(2, 2), FieldValue.O},
-                        {new Field(2, 0), new Field(0, 2), new Field(1, 2), FieldValue.X},
-                        {new Field(2, 0), new Field(0, 2), new Field(1, 2), FieldValue.O},
-                        {new Field(1, 1), new Field(2, 0), new Field(0, 1), FieldValue.X},
-                        {new Field(1, 1), new Field(2, 0), new Field(0, 1), FieldValue.O},
+                        {new Field(0, 2), new Field(1, 1), new Field(2, 2), Sign.X},
+                        {new Field(0, 2), new Field(1, 1), new Field(2, 2), Sign.O},
+                        {new Field(2, 0), new Field(0, 2), new Field(1, 2), Sign.X},
+                        {new Field(2, 0), new Field(0, 2), new Field(1, 2), Sign.O},
+                        {new Field(1, 1), new Field(2, 0), new Field(0, 1), Sign.X},
+                        {new Field(1, 1), new Field(2, 0), new Field(0, 1), Sign.O},
 
                         //SecondDiagonal
-                        {new Field(0, 0), new Field(1, 1), new Field(2, 0), FieldValue.X},
-                        {new Field(0, 0), new Field(1, 1), new Field(2, 0), FieldValue.O},
-                        {new Field(2, 2), new Field(0, 0), new Field(1, 0), FieldValue.X},
-                        {new Field(2, 2), new Field(0, 0), new Field(1, 0), FieldValue.O},
-                        {new Field(1, 1), new Field(2, 2), new Field(0, 1), FieldValue.X},
-                        {new Field(1, 1), new Field(2, 2), new Field(0, 1), FieldValue.O},
+                        {new Field(0, 0), new Field(1, 1), new Field(2, 0), Sign.X},
+                        {new Field(0, 0), new Field(1, 1), new Field(2, 0), Sign.O},
+                        {new Field(2, 2), new Field(0, 0), new Field(1, 0), Sign.X},
+                        {new Field(2, 2), new Field(0, 0), new Field(1, 0), Sign.O},
+                        {new Field(1, 1), new Field(2, 2), new Field(0, 1), Sign.X},
+                        {new Field(1, 1), new Field(2, 2), new Field(0, 1), Sign.O},
                 };
     }
 
     @DataProvider
     public static Object[][] getSingleMoveWithOneFieldIn3x3Board() {
         return new Object[][]{
-                {new Field(0, 0), new Field(0, 1), FieldValue.X},
-                {new Field(0, 1), new Field(0, 0), FieldValue.X},
-                {new Field(1, 0), new Field(0, 0), FieldValue.X},
-                {new Field(1, 1), new Field(0, 0), FieldValue.X},
-                {new Field(2, 0), new Field(0, 0), FieldValue.X},
-                {new Field(2, 1), new Field(0, 0), FieldValue.X},
-                {new Field(2, 2), new Field(0, 0), FieldValue.X},
-                {new Field(0, 0), new Field(1, 0), FieldValue.O},
-                {new Field(0, 1), new Field(1, 0), FieldValue.O},
-                {new Field(1, 0), new Field(1, 2), FieldValue.O},
-                {new Field(1, 1), new Field(1, 0), FieldValue.O},
-                {new Field(2, 0), new Field(1, 0), FieldValue.O},
-                {new Field(2, 1), new Field(1, 0), FieldValue.O},
-                {new Field(2, 2), new Field(1, 0), FieldValue.O},
+                {new Field(0, 0), new Field(0, 1), Sign.X},
+                {new Field(0, 1), new Field(0, 0), Sign.X},
+                {new Field(1, 0), new Field(0, 0), Sign.X},
+                {new Field(1, 1), new Field(0, 0), Sign.X},
+                {new Field(2, 0), new Field(0, 0), Sign.X},
+                {new Field(2, 1), new Field(0, 0), Sign.X},
+                {new Field(2, 2), new Field(0, 0), Sign.X},
+                {new Field(0, 0), new Field(1, 0), Sign.O},
+                {new Field(0, 1), new Field(1, 0), Sign.O},
+                {new Field(1, 0), new Field(1, 2), Sign.O},
+                {new Field(1, 1), new Field(1, 0), Sign.O},
+                {new Field(2, 0), new Field(1, 0), Sign.O},
+                {new Field(2, 1), new Field(1, 0), Sign.O},
+                {new Field(2, 2), new Field(1, 0), Sign.O},
         };
     }
 
@@ -163,29 +163,29 @@ public class BoardCheckerDP {
     public Object[][] getBoardScoreWithOneMoveToDraw() {
         BoardScore firstBoardScoreWithOneMoveToDraw = new BoardScore();
 
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 0), FieldValue.X);
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 1), FieldValue.O);
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 2), FieldValue.X);
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 0), FieldValue.O);
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 1), FieldValue.X);
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 2), FieldValue.O);
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 0), FieldValue.O);
-        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 1), FieldValue.X);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 0), Sign.X);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 1), Sign.O);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 2), Sign.X);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 0), Sign.O);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 1), Sign.X);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 2), Sign.O);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 0), Sign.O);
+        firstBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 1), Sign.X);
 
         BoardScore secondBoardScoreWithOneMoveToDraw = new BoardScore();
 
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 0), FieldValue.O);
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 1), FieldValue.O);
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 2), FieldValue.X);
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 0), FieldValue.O);
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 1), FieldValue.X);
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 2), FieldValue.X);
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 0), FieldValue.X);
-        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 1), FieldValue.O);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 0), Sign.O);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 1), Sign.O);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(0, 2), Sign.X);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 0), Sign.O);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 1), Sign.X);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(1, 2), Sign.X);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 0), Sign.X);
+        secondBoardScoreWithOneMoveToDraw.addFieldToBoard(new Field(2, 1), Sign.O);
 
         return new Object[][]{
-                {firstBoardScoreWithOneMoveToDraw, new Field(2, 2), FieldValue.O},
-                {secondBoardScoreWithOneMoveToDraw, new Field(2, 2), FieldValue.O}
+                {firstBoardScoreWithOneMoveToDraw, new Field(2, 2), Sign.O},
+                {secondBoardScoreWithOneMoveToDraw, new Field(2, 2), Sign.O}
         };
     }
 }

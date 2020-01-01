@@ -28,6 +28,8 @@
         <version.mockito.core>2.10.0</version.mockito.core>
         <version.maven.site.plugin>3.7.1</version.maven.site.plugin>
         <version.maven.project.info.reports.plugin>3.0.0</version.maven.project.info.reports.plugin>
+        <version.plugin.maven.checkstyle>3.1.0</version.plugin.maven.checkstyle>
+        <version.spotbugs.maven.plugin>3.1.12.2</version.spotbugs.maven.plugin>
     </properties>
 
     <dependencies>
@@ -64,6 +66,21 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${version.plugin.maven.checkstyle}</version>
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <failOnViolation>false</failOnViolation>
+                    <enableFilesSummary>false</enableFilesSummary>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${version.spotbugs.maven.plugin}</version>
             </plugin>
         </plugins>
     </reporting>
@@ -110,7 +127,7 @@
                         <index>true</index>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.mkul.game.ox.OXApp</mainClass>
+                            <mainClass>com.mkul.game.ox.App</mainClass>
                         </manifest>
                         <manifestEntries>
                             <mode>development</mode>
