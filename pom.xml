@@ -23,7 +23,7 @@
         <version.plugin.maven.compiler>3.8.0</version.plugin.maven.compiler>
         <version.plugin.maven.resources>3.1.0</version.plugin.maven.resources>
         <version.plugin.maven.jacoco>0.8.5</version.plugin.maven.jacoco>
-        <version.testng>7.0.0</version.testng>
+        <version.testng>7.7.0</version.testng>
         <version.assertj.core>3.11.1</version.assertj.core>
         <version.mockito.core>2.10.0</version.mockito.core>
         <version.maven.site.plugin>3.7.1</version.maven.site.plugin>
